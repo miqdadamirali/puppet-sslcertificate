@@ -25,7 +25,7 @@ Small defined type that will allow you to manage Windows certificates.
 ## Module Description
 
 A module that will allow you to install and remove your certificates on Windows
-machines. It will manage pfx, cer, der, p7b, sst certificates.
+machines. It will manage pfx, cer, der, p7b, and sst certificates.
 
 ## Setup
 
@@ -41,7 +41,7 @@ machines. It will manage pfx, cer, der, p7b, sst certificates.
     sslcertificate { "Install-PFX-Certificate" :
       name       => 'mycert.pfx',
       password   => 'password123',
-      location   => 'C:\',
+      location   => "C:\",
       thumbprint => '07E5C1AF7F5223CB975CC29B5455642F5570798B'
     }
 ```
@@ -51,7 +51,7 @@ machines. It will manage pfx, cer, der, p7b, sst certificates.
 ```puppet
     sslcertificate { "Install-Intermediate-Certificate" :
       name       => 'go_daddy_intermediate.p7b',
-      location   => 'C:\',
+      location   => "C:\",
       store_dir  => 'CA',
       root_store => 'LocalMachine',
       thumbprint => '07E5C1AF7F5223CB975CC29B5455642F5570798B'
@@ -65,7 +65,7 @@ To install a certificate in the My directory of the LocalMachine root store and 
       password       => 'password123',
       location       => 'C:',
       thumbprint     => '07E5C1AF7F5223CB975CC29B5455642F5570798B',
-      exportable  => false
+      exportable     => false
   }
 ```
 
